@@ -40,8 +40,11 @@ def game():
             print(f"That's right! The correct number was {target_number}!")
             print(f"{user_name}, you managed to guess the correct number in {guess_counter + 1} tries!")
             play_again = input(play_again_text + instructions)
-            if play_again == "Y":
+            if play_again == "Y" or play_again == "y":
                 game()
+            elif play_again == "Q" or play_again == "q":
+                print(quit_text)
+                break
         elif guess_counter == 5:
             print(f"Ahh unlucky {user_name}, you're out of guesses. The correct number was {target_number}")
             play_again = input(play_again_text + instructions)
